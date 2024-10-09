@@ -1,0 +1,6 @@
+torch==2.2.2
+numpy==1.25.2
+torchao==0.1
+torchtune==0.3.0
+
+
