@@ -1,3 +1,5 @@
+name: Test Homework 02
+
 on: 
   workflow_dispatch:
 
