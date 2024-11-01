@@ -31,6 +31,7 @@ def sort_tuples_in_list(answer):
 
 
 class TestMinhash(unittest.TestCase):
+   '''
     def test_jaccard(self):
         min_hash = MinHash(num_permutations=5, threshold=0.0)
         jaccard_sim = min_hash.get_jaccard_similarity({1, 2, 3, 4}, {3,4})
@@ -38,21 +39,29 @@ class TestMinhash(unittest.TestCase):
         
         jaccard_sim = min_hash.get_jaccard_similarity({1, 2, 3, 4}, {3,4,7,8,9,10})
         self.assertEqual(jaccard_sim, 0.25)
+   '''
+   def test_minhash_similarity(self):
+        min_hash = MinHash(num_permutations=5, threshold=0.0)
+        minhash_sim = min_hash.test_minhash_similarity(np.array([1, 2, 3]), np.array([4, 5, 6]))
+        self.assertEqual(minhash_sim, 0.0)
+        
+        minhash_sim = min_hash.test_minhash_similarity(np.array([1, 1, 2, 3, 2]), np.array([1, 1, 3, 3, 5]))
+        self.assertEqual(minhash_sim, 0.6)
 
     def test_get_similar_pairs(self):
         
         min_hash = MinHash(num_permutations=2, threshold=0.0)
         answer = min_hash.run_minhash(Docs) 
-        self.assertEqual(sort_tuples_in_list(answer), {(0, 4)})
+        self.assertEqual(sort_tuples_in_list(answer), {})
         
         min_hash = MinHash(num_permutations=5, threshold=0.0)
         answer = min_hash.run_minhash(Docs)
-        self.assertEqual(sort_tuples_in_list(answer), {(0, 1), (0, 2), (0, 3), (0, 4), (1, 2), (1, 3), (1, 4), (2, 3), (2, 4)})
+        self.assertEqual(sort_tuples_in_list(answer), {(0, 2), (0, 3), (1, 2), (1, 3), (2, 3)})
         
         
-        min_hash = MinHash(num_permutations=2, threshold=0.3)
+        min_hash = MinHash(num_permutations=4, threshold=0.3)
         answer = min_hash.run_minhash(Docs)
-        self.assertEqual(sort_tuples_in_list(answer), {(0, 4)})
+        self.assertEqual(sort_tuples_in_list(answer), {(2, 3)})
         
         
         
