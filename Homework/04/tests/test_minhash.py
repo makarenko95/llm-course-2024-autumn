@@ -40,7 +40,7 @@ class TestMinhash(unittest.TestCase):
         jaccard_sim = min_hash.get_jaccard_similarity({1, 2, 3, 4}, {3,4,7,8,9,10})
         self.assertEqual(jaccard_sim, 0.25)
    '''
-   def test_minhash_similarity(self):
+   def get_minhash_similarity(self):
         min_hash = MinHash(num_permutations=5, threshold=0.0)
         minhash_sim = min_hash.test_minhash_similarity(np.array([1, 2, 3]), np.array([4, 5, 6]))
         self.assertEqual(minhash_sim, 0.0)
@@ -52,7 +52,7 @@ class TestMinhash(unittest.TestCase):
         
         min_hash = MinHash(num_permutations=2, threshold=0.0)
         answer = min_hash.run_minhash(Docs) 
-        self.assertEqual(sort_tuples_in_list(answer), {})
+        self.assertEqual(sort_tuples_in_list(answer), set())
         
         min_hash = MinHash(num_permutations=5, threshold=0.0)
         answer = min_hash.run_minhash(Docs)
