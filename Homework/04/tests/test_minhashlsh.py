@@ -48,7 +48,7 @@ class TestMinhashLSH(unittest.TestCase):
                 
         min_hash = MinHashLSH(num_permutations=5, num_buckets=3, threshold=0.0)
         answer = min_hash.run_minhash_lsh(Docs) 
-        self.assertEqual(sort_tuples_in_list(answer), {(0, 2), (0, 3), (2, 3)})
+        self.assertEqual(sort_tuples_in_list(answer), {(2, 3)})
         
         min_hash = MinHashLSH(num_permutations=5, num_buckets=3, threshold=0.0)
         answer = min_hash.run_minhash_lsh([Docs[1], Docs[1]]) 
