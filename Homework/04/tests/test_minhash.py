@@ -3,6 +3,7 @@ sys.path.append("Homework/04")
 import unittest
 import random
 from minhash import MinHash
+import numpy as np
 
 Docs = [
    'Я очень люблю читать книги, особенно перед сном. Это помогает мне расслабиться и отвлечься от повседневных забот.',
