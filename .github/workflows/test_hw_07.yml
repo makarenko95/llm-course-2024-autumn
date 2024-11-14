@@ -18,6 +18,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r Homework/07/requirements.txt
+    - name: Download test
+      run: |
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/07/tests/test_lora.py -O Homework/07/tests/test_lora.py
     - name: Run unit test
       run: |
         cd Homework/07/
@@ -34,6 +37,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r Homework/07/requirements.txt
+    - name: Download test
+      run: |
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/07/tests/test_quantization.py -O Homework/07/tests/test_quantization.py
     - name: Run unit test
       run: |
         cd Homework/07/
