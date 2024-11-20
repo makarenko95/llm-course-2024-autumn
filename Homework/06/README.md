@@ -16,7 +16,7 @@
 * `create_prompt` — 1 балл
 * `create_prompt_with_examples` — 1 балл
 * `predict_by_token_id` — 4 балла
-* `get_choice_log_probs` — 4 баллов
+* `get_choice_log_probs` — 4 балла
 
 
 Более подробное описание задания находится в `assignment.ipynb`
