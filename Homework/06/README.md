@@ -20,3 +20,9 @@
 
 
 Более подробное описание задания находится в `assignment.ipynb`
+
+Для запуска тестов: 
+
+```python -m unittest Homework/06/tests/test_prompts.py```
+
+```python -m unittest Homework/06/tests/test_predictions.py```
