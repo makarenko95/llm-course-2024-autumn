@@ -23,7 +23,7 @@ jobs:
         wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_pairwise_dataset.py -O Homework/05/tests/test_pairwise_dataset.py
     - name: Run unit test
       run: |
-        cd Homework/07/
+        cd Homework/05/
         python3 -m unittest --verbose tests/test_pairwise_dataset.py
   test-compute-reward:
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
         wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_compute_reward.py -O Homework/05/tests/test_compute_reward.py
     - name: Run unit test
       run: |
-        cd Homework/07/
+        cd Homework/05/
         python3 -m unittest --verbose tests/test_compute_reward.py
   test-eval-reward-model:
     runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
         wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_eval_reward_model.py -O Homework/05/tests/test_eval_reward_model.py
     - name: Run unit test
       run: |
-        cd Homework/07/
+        cd Homework/05/
         python3 -m unittest --verbose tests/test_eval_reward_model.py
   test-guided-generation:
     runs-on: ubuntu-latest
@@ -80,5 +80,5 @@ jobs:
         wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_guided_generation.py -O Homework/05/tests/test_guided_generation.py
     - name: Run unit test
       run: |
-        cd Homework/07/
+        cd Homework/05/
         python3 -m unittest --verbose tests/test_guided_generation.py
