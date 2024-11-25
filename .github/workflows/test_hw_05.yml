@@ -1,0 +1,84 @@
+name: Test Homework 05
+
+on: 
+  push:
+    paths:
+      Homework/05/scripts/*.py
+
+jobs:
+  test-pairwise-dataset:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r Homework/05/requirements.txt
+    - name: Download test
+      run: |
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_pairwise_dataset.py -O Homework/05/tests/test_pairwise_dataset.py
+    - name: Run unit test
+      run: |
+        cd Homework/07/
+        python3 -m unittest --verbose tests/test_pairwise_dataset.py
+  test-compute-reward:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r Homework/05/requirements.txt
+    - name: Download test
+      run: |
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_compute_reward.py -O Homework/05/tests/test_compute_reward.py
+    - name: Run unit test
+      run: |
+        cd Homework/07/
+        python3 -m unittest --verbose tests/test_compute_reward.py
+  test-eval-reward-model:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r Homework/05/requirements.txt
+    - name: Download test
+      run: |
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_eval_reward_model.py -O Homework/05/tests/test_eval_reward_model.py
+    - name: Run unit test
+      run: |
+        cd Homework/07/
+        python3 -m unittest --verbose tests/test_eval_reward_model.py
+  test-guided-generation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r Homework/05/requirements.txt
+    - name: Download test
+      run: |
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/05/tests/test_guided_generation.py -O Homework/05/tests/test_guided_generation.py
+    - name: Run unit test
+      run: |
+        cd Homework/07/
+        python3 -m unittest --verbose tests/test_guided_generation.py
