@@ -1,0 +1,26 @@
+name: Test Homework 08
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-tokenizer:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r Homework/08/requirements.txt
+    - name: Download test
+      run: |
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/08/tests/test_fsm.py -O Homework/08/tests/test_fsm.py
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/08/tests/test_structured_generation.py -O Homework/08/tests/test_structured_generation.py
+    - name: Test FSM
+      run: python -m pytest -s Homework/08/tests/test_fsm.py
+    - name: Test Structured Generation
+      run: python -m pytest -s Homework/08/tests/test_structured_generation.py
