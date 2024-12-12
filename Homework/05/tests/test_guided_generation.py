@@ -33,7 +33,7 @@ class TestGuidedGeneration(TestCase):
         self.mock_tokenizer = MockTokenizer()
 
     def test_random_reward(self):
-        def compute_reward(reward_model, reward_tokenizer, texts):
+        def compute_reward(reward_model, reward_tokenizer, texts, device='cpu'):
             def inner_reward(text):
                 return float(text)
 

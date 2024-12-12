@@ -30,7 +30,7 @@ class TestEvalRewardModel(TestCase):
 
     def test_custom_dataset(self):
         
-        def compute_reward(reward_model, reward_tokenizer, texts):
+        def compute_reward(reward_model, reward_tokenizer, texts, device='cpu'):
             def inner_reward(text):
                 return int(text)
 
@@ -63,7 +63,7 @@ class TestEvalRewardModel(TestCase):
 
 
     def test_imdb_heuristics(self):
-        def compute_reward(reward_model, reward_tokenizer, texts):
+        def compute_reward(reward_model, reward_tokenizer, texts, device='cpu'):
             def simple_reward(text):
 
                 positive_keywords = [
