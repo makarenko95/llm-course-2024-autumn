@@ -1,0 +1,27 @@
+name: Test Homework 09
+on:
+  workflow_dispatch:
+jobs:
+  test-search:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r Homework/09/requirements.txt
+    - name: Download files
+      run: |
+        mkdir -p Homework/09/tests
+        mkdir -p Homework/09/data
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/tests/test_search.py -O Homework/09/tests/test_search.py
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/tests/test_faiss.py -O Homework/09/tests/test_faiss.py
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/data/articles.json -O Homework/09/data/articles.json
+    - name: Test Basic Search
+      run: python -m pytest -s Homework/09/tests/test_search.py
+    - name: Test FAISS Search 
+      run: python -m pytest -s Homework/09/tests/test_faiss.py

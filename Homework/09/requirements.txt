@@ -1,0 +1,6 @@
+numpy
+torch
+sentence-transformers
+pytest
+huggingface-hub
+faiss-cpu
