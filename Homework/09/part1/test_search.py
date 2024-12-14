@@ -1,7 +1,7 @@
 import pytest
 import os
 import numpy as np
-from search_engine import Document, Indexer, Searcher, load_documents
+from part1.search_engine import Document, Indexer, Searcher, load_documents
 
 @pytest.fixture
 def documents():

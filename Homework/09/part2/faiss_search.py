@@ -3,7 +3,7 @@ import numpy as np
 import faiss
 import pickle
 from sentence_transformers import SentenceTransformer
-from search_engine import Document, SearchResult
+from part1.search_engine import Document, SearchResult
 
 class FAISSSearcher:
     def __init__(self, model_name: str = 'all-MiniLM-L6-v2'):

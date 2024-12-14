@@ -16,12 +16,10 @@ jobs:
         pip install -r Homework/09/requirements.txt
     - name: Download files
       run: |
-        mkdir -p Homework/09/tests
-        mkdir -p Homework/09/data
-        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/tests/test_search.py -O Homework/09/tests/test_search.py
-        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/tests/test_faiss.py -O Homework/09/tests/test_faiss.py
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/part1/test_search.py -O Homework/09/part1/test_search.py
+        wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/part2/test_faiss.py -O Homework/09/part2/test_faiss.py
         wget https://raw.githubusercontent.com/makarenko95/llm-course-2024-autumn/refs/heads/main/Homework/09/data/articles.json -O Homework/09/data/articles.json
     - name: Test Basic Search
-      run: python -m pytest -s Homework/09/tests/test_search.py
+      run: python -m pytest -s Homework/09/part1/test_search.py
     - name: Test FAISS Search 
-      run: python -m pytest -s Homework/09/tests/test_faiss.py
+      run: python -m pytest -s Homework/09/part2/test_faiss.py

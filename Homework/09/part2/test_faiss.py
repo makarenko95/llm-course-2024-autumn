@@ -1,8 +1,8 @@
 import pytest
 import numpy as np
 import faiss
-from faiss_search import FAISSSearcher
-from search_engine import load_documents
+from part2.faiss_search import FAISSSearcher 
+from part1.search_engine import Document, load_documents
 
 @pytest.fixture
 def documents():
